@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>III. Arreglos y sus funciones - Actividad de JavaScript</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark barra-azul">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Prácticas de JavaScript</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#barraMenu" aria-controls="barraMenu" aria-expanded="false" aria-label="Mostrar navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="barraMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="condiciones.html">Condiciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="ciclos.html">While y For</a></li>
+        <li class="nav-item"><a class="nav-link" href="arreglos.html">Arreglos</a></li>
+        <li class="nav-item"><a class="nav-link" href="formulario.html">Formulario</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container py-4">
+  <header class="encabezado">
+    <h1>III. Arreglos y sus funciones</h1>
+    <p class="mb-0">Operaciones con un arreglo inicial de 10 países.</p>
+  </header>
+
+<div class="caja-ejercicio">
+  <h2>Arreglo de 10 países</h2>
+  <p id="listaPaises" class="paises"></p>
+  <p>Posiciones actuales: <strong id="cantidadPaises"></strong></p>
+  <button type="button" class="btn btn-outline-primary" onclick="reiniciarPaises()">Volver a los 10 países originales</button>
+  <div id="mensajeArreglo" class="resultado" aria-live="polite">Prueba los botones de abajo. Algunos modifican el arreglo.</div>
+  <small><strong>Importante:</strong> cada botón trabaja con el arreglo como quedó después del botón anterior. Puedes reiniciarlo cuando quieras.</small>
+</div>
+
+<section id="funcion-pop" class="caja-ejercicio">
+  <h2>1. pop</h2>
+  <p>Elimina el último país del arreglo.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('pop')">Probar pop</button>
+  <div id="resultado-pop" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-shift" class="caja-ejercicio">
+  <h2>2. shift</h2>
+  <p>Elimina el primer país del arreglo.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('shift')">Probar shift</button>
+  <div id="resultado-shift" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-push" class="caja-ejercicio">
+  <h2>3. push</h2>
+  <p>Agrega un país al final.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('push')">Probar push</button>
+  <div id="resultado-push" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-unshift" class="caja-ejercicio">
+  <h2>4. unshift</h2>
+  <p>Agrega un país al principio.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('unshift')">Probar unshift</button>
+  <div id="resultado-unshift" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-splice" class="caja-ejercicio">
+  <h2>5. splice</h2>
+  <p>Reemplaza un elemento del arreglo.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('splice')">Probar splice</button>
+  <div id="resultado-splice" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-delete" class="caja-ejercicio">
+  <h2>6. delete</h2>
+  <p>Borra una posición, pero conserva el espacio vacío.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('delete')">Probar delete</button>
+  <div id="resultado-delete" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-reverse" class="caja-ejercicio">
+  <h2>7. reverse</h2>
+  <p>Invierte el orden de los elementos.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('reverse')">Probar reverse</button>
+  <div id="resultado-reverse" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-sort" class="caja-ejercicio">
+  <h2>8. sort</h2>
+  <p>Ordena alfabéticamente los países.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('sort')">Probar sort</button>
+  <div id="resultado-sort" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-concat" class="caja-ejercicio">
+  <h2>9. concat</h2>
+  <p>Forma otro arreglo juntando dos arreglos.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('concat')">Probar concat</button>
+  <div id="resultado-concat" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-join" class="caja-ejercicio">
+  <h2>10. join</h2>
+  <p>Convierte los elementos en texto separado por guiones.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('join')">Probar join</button>
+  <div id="resultado-join" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+
+<section id="funcion-length" class="caja-ejercicio">
+  <h2>11. length</h2>
+  <p>Muestra cuántas posiciones tiene el arreglo.</p>
+  <button type="button" class="btn btn-primary" onclick="ejecutarArreglo('length')">Probar length</button>
+  <div id="resultado-length" class="resultado" aria-live="polite">Presiona el botón para probar esta operación.</div>
+</section>
+  <p class="mt-3"><a href="index.html" class="btn btn-outline-primary">Volver al inicio</a></p>
+</main>
+<footer class="pie">Actividad 1 · Estructuras de control, funciones, eventos y arreglos · 4.º cuatrimestre</footer>
+<script src="js/bootstrap.bundle.js"></script>
+  <script src="js/arreglos.js"></script>
+</body>
+</html>

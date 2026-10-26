@@ -1,0 +1,73 @@
+body {
+    background-color: #edf6ff;
+    font-family: Arial, sans-serif;
+}
+
+.barra-azul {
+    background-color: #3185c5;
+}
+
+.encabezado {
+    background-color: #cfe9ff;
+    border: 2px solid #a8d2f2;
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+}
+
+.caja-ejercicio {
+    background-color: white;
+    border: 1px solid #b8d5ec;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 22px;
+}
+
+.caja-ejercicio h2 {
+    color: #176297;
+    font-size: 1.35rem;
+}
+
+.resultado {
+    background-color: #eaf4ff;
+    border-left: 4px solid #3185c5;
+    padding: 12px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    min-height: 42px;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.enlace-ejercicio {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.tabla-multiplicar {
+    background-color: #eaf4ff;
+    border: 1px solid #bed9ee;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    white-space: pre-line;
+}
+
+.paises {
+    background-color: #fff8dd;
+    border: 1px solid #f0df9a;
+    padding: 12px;
+    border-radius: 5px;
+    overflow-wrap: anywhere;
+}
+
+.pie {
+    background-color: #dceeff;
+    margin-top: 35px;
+    padding: 18px;
+    text-align: center;
+}
+
+#formIngreso {
+    max-width: 450px;
+}
